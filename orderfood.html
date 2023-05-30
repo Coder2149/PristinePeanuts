@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title> Ordering </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/FoodTruckEXTStyles.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Poppins:wght@100&display=swap" rel="stylesheet">	<link rel = "icon" href = "images/PristinePeanutsSecondaryLogo.png"
         type = "image/x-icon">
 		<style>
@@ -67,6 +68,8 @@ height: 10%;
         display: flex;
       }
 
+input { color: teal; font-family: 'Alkatra'; text-align: center;}
+
 figure { border: dotted 10px; width: 25%; height: 60%; font-size: 12.3px; font-family: 'Alkatra', Sans-Serif;}
 
 img {align-items: center; }
@@ -110,7 +113,7 @@ figcaption { width: 90%; }
 
 <div class="header1">
 
-<H1 style="padding-top: 10px;"> Menu - SPICY Peanuts</H1>
+<H1 style="padding-top: 10px;"> Order Food! </H1>
 
 </div>
 
@@ -118,60 +121,92 @@ figcaption { width: 90%; }
 
 <br>
 
-<div class="container3">
-
-<figure style="margin-left: 1%;" class="container2">
-
-	<h1> Donkwa </h1>
-
-	<img src="images/Donkwa.jpg" alt="Donkwa Peanut Balls" width="40%" height="10%">
-
-	<br>
-
-	<figcaption> Donkwa is a savory Nigerian snack that is made with cornmeal & groundnuts (also known as peanuts). It may also have additional ingredients added to it (e.g., dates). These snacks leave one with a delicious & savory yet very affordable price. </figcaption>
-
-		
-<br>
-	<a style="width: 10%;" class="capsule" href="#"> ORDER NOW! </a>
-</figure>
-
-<figure style="margin-left: 9.5%;" class="container2">
-
-	<h1> Planters Heat </h1>
-
-	<img src="images/PlantersHeat.png" alt="Planters Heat Peanuts" height="20%" width="50%">
-	
-	<br>
-	
-	<figcaption> With an irresistible crunchy texture, satisfying taste, Planters Heat Peanuts are cooked without oil. Seasoned with a touch of sea salt, these nuts are lower in sodium but not flavor, making them a great way to fulfill your cravings for a salty snack without the guilt.  These oil roasted peanuts deliver the heat you seek and help curb hunger for substantial snacking. </figcaption>
-	
-	<br>
-	
-	<a style="width: 10%;" class="capsule" href="#"> ORDER NOW! </a>
-
-</figure>
-
-<figure style="margin-left: 9%;" class="container2">
-
-	<h1> Cajun </h1>
-	
-	<img src="images/Cajun.jpg" alt="Sichaun Peanuts" width="40%" height="10%">
-	
-	<br>
-	
-	<figcaption> Cajun peanuts are made by coating roasted or fried peanuts with a blend of spices commonly used in Cajun cooking. These spices typically include paprika, garlic powder, onion powder, cayenne pepper, and other seasonings that vary depending on the recipe. The peanuts are then roasted or fried to give them a crunchy texture and to help the spices adhere to the surface of the nut.  </figcaption>
-	
-	<br>
-	
-		<a style="width: 10%;" class="capsule" href="#"> ORDER NOW! </a>
-		
-</figure>
+<div style="text-align: center; background-color: lavender; padding: 20px;">
+	<h2 style="font-family: 'Alkatra'; color: teal; font-size: 24px;">Food Order Form</h2>
+	<form action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
+	<form id="foodOrderForm" style="display: block; margin: auto; width: 50%; text-align: center; font-family: 'Alkatra'; color: teal;" onsubmit="return validateForm()">
+	  <label for="name" style="font-family: 'Alkatra'; color: teal;">Name:</label><br>
+	  <input type="text" id="name" name="name" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal;" required><br><br>
+  
+	  <label for="email" style="font-family: 'Alkatra'; color: teal;">Email:</label><br>
+	  <input type="email" id="email" name="email" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal;" required><br><br>
+  
+	  <label for="address" style="font-family: 'Alkatra'; color: teal;">Address:</label><br>
+	  <input type="text" id="address" name="address" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal;" required><br><br>
+  
+	  <label for="peanuts" style="font-family: 'Alkatra'; color: teal; font-size: 18px;">Peanuts:</label><br>
+	  <select id="peanuts" name="peanuts" multiple style="width: 100%; border-radius: 5px; font-family: 'Alkatra'; border: 1px solid teal;" required>
+		<option value="none" style="background-color: teal; color: lavender;">None</option>
+		<option value="donkwa" style="background-color: teal; color: lavender;">Donkwa</option>
+		<option value="planters_heat" style="background-color: teal; color: lavender;">Planters Heat</option>
+		<option value="cajun" style="background-color: teal; color: lavender;">Cajun</option>
+		<option value="french_burnt" style="background-color: teal; color: lavender;">French Burnt Peanuts</option>
+		<option value="buffalo" style="background-color: teal; color: lavender;">Buffalo Peanuts</option>
+		<option value="chocolate" style="background-color: teal; color: lavender;">Chocolate Peanuts</option>
+	  </select><br><br>
+  
+	  <label for="snacks" style="font-family: 'Alkatra'; color: teal; font-size: 18px;">Snacks:</label><br>
+	  <select id="snacks" name="snacks" multiple style="width: 100%; border-radius: 5px; font-family: 'ALkatra'; border: 1px solid teal;" required>
+		<option value="none" style="background-color: teal; color: lavender;">None</option>
+		<option value="cheetos" style="background-color: teal; color: lavender;">Bag Of Cheetos</option>
+		<option value="doritos" style="background-color: teal; color: lavender;">Jumbo Doritos</option>
+		<option value="pringles" style="background-color: teal; color: lavender;">Can Of Pringles</option>
+		<option value="pretzels" style="background-color: teal; color: lavender;">Bag Of Pretzels - Rold Gold</option>
+		<option value="popcorn" style="background-color: teal; color: lavender;">Bag Of Cheese & Chili Popcorn</option>
+		<option value="goldfish" style="background-color: teal; color: lavender;">Jumbo Bag - Chocolate-Dipped Goldfish</option>
+	  </select><br><br>
+  
+	  <label for="sodas" style="font-family: 'Alkatra'; color: teal; font-size: 18px;">Sodas:</label><br>
+	  <select id="sodas" name="sodas" multiple style="width: 100%; border-radius: 5px; font-family: 'Alkatra'; border: 1px solid teal;" required>
+		<option value="none" style="background-color: teal; color: lavender;">None</option>
+		<option value="coke" style="background-color: teal; color: lavender;">Coca-Cola</option>
+		<option value="sprite" style="background-color: teal; color: lavender;">Sprite</option>
+		<option value="root_beer" style="background-color: teal; color: lavender;">A & W Root Beer</option>
+		<option value="fanta" style="background-color: teal; color: lavender;">Fanta</option>
+		<option value="mountain_dew" style="background-color: teal; color: lavender;">Mountain Dew</option>
+		<option value="dr_pepper" style="background-color: teal; color: lavender;">Dr. Pepper</option>
+	  </select><br><br>
+  
+	  <label for="pickup_time" style="font-family: 'Alkatra'; color: teal;">Pickup Time:</label><br>
+	  <select id="pickup_time" name="pickup_time" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal; font-family: 'Alkatra'; text-align: center;" required>
+		<option value="" style="background-color: teal; color: lavender;">Select Pickup Time</option>
+		<option value="09:00 AM" style="background-color: teal; color: lavender;">09:00 AM</option>
+		<option value="10:00 AM" style="background-color: teal; color: lavender;">10:00 AM</option>
+		<option value="11:00 AM" style="background-color: teal; color: lavender;">11:00 AM</option>
+		<option value="12:00 PM" style="background-color: teal; color: lavender;">12:00 PM</option>
+		<option value="01:00 PM" style="background-color: teal; color: lavender;">01:00 PM</option>
+		<option value="02:00 PM" style="background-color: teal; color: lavender;">02:00 PM</option>
+		<option value="03:00 PM" style="background-color: teal; color: lavender;">03:00 PM</option>
+		<option value="04:00 PM" style="background-color: teal; color: lavender;">04:00 PM</option>
+		<option value="05:00 PM" style="background-color: teal; color: lavender;">05:00 PM</option>
+	  </select><br><br>
+  
+	  <input type="submit" value="Submit" style="padding: 10px 20px; background-color: teal; color: lavender; border: none; border-radius: 5px; cursor: pointer;">
+	</form>
+  </div>
 
 <script>
 
 window.addEventListener('load', function() {
 		  document.body.style.opacity = 1;
 		});
+
+		function validateForm() {
+	  var name = document.forms["foodOrderForm"]["name"].value;
+	  var email = document.forms["foodOrderForm"]["email"].value;
+	  var address = document.forms["foodOrderForm"]["address"].value;
+	  var peanuts = document.forms["foodOrderForm"]["peanuts"].value;
+	  var snacks = document.forms["foodOrderForm"]["snacks"].value;
+	  var sodas = document.forms["foodOrderForm"]["sodas"].value;
+	  var pickupTime = document.forms["foodOrderForm"]["pickup_time"].value;
+  
+	  if (name == "" || email == "" || address == "" || peanuts == "" || snacks == "" || sodas == "" || pickupTime == "") {
+		alert("Please fill in all fields.");
+		return false;
+	  }
+  
+	  alert("Thank you for your order!");
+	}
 
 </script>
 
