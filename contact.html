@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title> Contact Us </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/FoodTruckEXTStyles.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Poppins:wght@100&display=swap" rel="stylesheet">
+	<link rel = "icon" href = "images/PristinePeanutsSecondaryLogo.png"
+        type = "image/x-icon">
+		<style>
+
+		*{margin: 0;}
+
+		body { background-color: lavender; color: teal; text-align: center; font-family: 'Alkatra'; opacity: 0;
+      animation: fadeInAnimation 0.25s forwards;
+      transition: opacity 0.25s;}
+		
+		nav{
+			width: 100%;
+			background-color: lavender;
+			}
+		
+		nav ul {
+				text-align: center;
+				}
+				
+		nav ul li{
+			list-style:none;
+			display: inline-block;
+			}
+		nav ul li a{
+			display: block;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: teal;
+			font-size: 20px;
+			font-family: 'Alkatra' , Sans-Serif;
+			letter-spacing: 2px;
+			font-weight: 600;
+			padding: 20px;
+			}
+			
+		nav ul li a:hover {
+							background-color:#211B4385;
+							transition: all ease 1.5s;
+							}
+
+							marquee {
+  background-color: lavender;
+  font-family: 'Alkatra', Sans-Serif;
+  color: teal;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.header1 {
+  
+  color: #FFE5B4;
+height: 10%;
+  background-color: royalblue;
+  text-align: center;
+  width: 100%;
+  font-family:'Alkatra', Sans-Serif;
+}
+
+.header2 {
+	color: royalblue;
+	height:10%;
+	background-color:#FFE5B4;
+	text-align: center;
+	width: 50%;
+	font-family: 'Alkatra', Sans-Serif;
+}
+
+.container {
+        display: flex;
+      }
+
+	  #contactForm {
+            max-width: 300px;
+            margin: 0 0 0 0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            float: left;
+        }
+
+        #thankYouMessage {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            color: teal;
+            margin-bottom: 20px;
+			font-family: 'Alkatra';
+        }
+
+        #resubmitLink {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+figure { border: dotted 10px; width: 25%; height: 60%; font-size: 12.3px; font-family: 'Alkatra', Sans-Serif;}
+
+img {align-items: center; }
+
+
+form input {
+            font-family: 'Alkatra';
+            width: 100%;
+            padding: 10px;
+            border: 2px solid teal;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #f2e9f8;
+            margin-bottom: 10px;
+            color: teal;
+        }
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container3 { width: 100%; display: flex;}
+
+figcaption { width: 90%; }
+
+input, option, select, .resubmitButton { font-family: 'Alkatra';}
+
+@keyframes grow-shrink {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+		.resubmitButton {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: teal;
+            color: lavender;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .resubmitButton:hover {
+            opacity: 0.8;
+        }
+
+        .show {
+            opacity: 1;
+        }
+
+        label { font-family: 'Alkatra';}
+
+        input { width: 50%;}
+        
+        
+	</style>
+
+        <script>
+            function submitForm(event) {
+                event.preventDefault();
+                var form = document.getElementById('form');
+                var thankYouMessage = document.getElementById('thankYouMessage');
+                var resubmitLink = document.getElementById('resubmitLink');
+
+                form.style.opacity = '0';
+                setTimeout(function() {
+                    form.style.display = 'none';
+                    thankYouMessage.textContent = 'Thank You! We will respond to you as soon as possible!';
+                    thankYouMessage.style.display = 'block';
+                    resubmitLink.innerHTML = '<a href="#" class="resubmitButton" onclick="resubmitForm()">Resubmit form</a>';
+                    resubmitLink.style.display = 'block';
+                    setTimeout(function() {
+                        thankYouMessage.classList.add('show');
+                        resubmitLink.classList.add('show');
+                    }, 50);
+                }, 300);
+            }
+
+            function resubmitForm() {
+                var form = document.getElementById('form');
+                var thankYouMessage = document.getElementById('thankYouMessage');
+                var resubmitLink = document.getElementById('resubmitLink');
+
+                thankYouMessage.classList.remove('show');
+                resubmitLink.classList.remove('show');
+                setTimeout(function() {
+                    form.style.display = 'block';
+                    form.style.opacity = '1';
+                    thankYouMessage.style.display = 'none';
+                    resubmitLink.style.display = 'none';
+                }, 300);
+            }
+        </script>
+
+
+</head>
+
+
+
+<body>
+    <nav style="text-align: center;">
+
+        <marquee behavior="scroll" direction="left">
+			PRISTINE PEANUTS: "ALWAYS HANDMADE & QUALITY FOOD"
+		  </marquee>
+
+        <div style="display: flex; align-items: center; background-color: teal; padding: 10px;">
+          <a href="index.html"><img style="text-align: left; align-items: ; justify-content: left;" src="images/PristinePeanutsSecondaryLogo.png" alt="Logo" width="150px" height="30%"></a>
+          <ul style="list-style-type: none;">
+            <li style="margin-right: 10px;"><a href="orderfood.html" style="text-decoration: none; color: #fff;">Order Food</a></li>
+            <li style="margin-right: 10px;"><a href="ourstory.html" style="text-decoration: none; color: #fff;">Our Story</a></li>
+            <li style="margin-right: 10px;"><a href="visitus.html" style="text-decoration: none; color: #fff;">Visit Us</a></li>
+            <li style="margin-right: 10px;"><a href="contact.html" style="text-decoration: none; color: #fff;">Contact</a></li>
+            <li style="margin-right: 10px;"><a href="requestthefoodtruck.html" style="text-decoration: none; color: #fff;">Request The Food Truck</a> </li>
+            </ul>
+        </div>
+      
+      </nav>
+<div class="container">
+
+<div class="header1">
+
+<H1 style="padding-top: 10px;"> Contact Us! </H1>
+
+<H1 style="float: right;">
+
+</div>
+
+</div>
+
+<br>
+
+<body>
+
+<div style="width: 100%; text-align: center;">
+	<h1 style="font-family: 'Alkatra';"> Problems? No Problem! </div>
+	<br>
+
+    <div class="sliding-div">
+        <div class="bouncing-div">
+
+<div class="randomcontain" style="display: flex; width: 100%;">
+
+
+<div style="width: 50%; float: left; margin-left: 2.5%;" id="contactForm">
+
+    <div class="container2">
+
+	<h2 style="text-align: center; font-family: 'Alkatra';"> E - Mail Us! </h2>
+        <form style="font-family: 'Alkatra'; margin-left: 0;" action="#" method="post" id="form" onsubmit="submitForm(event)">
+            <label for="name" style="display: block; margin-bottom: 10px; color: teal; text-align: center;">Name:</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal; background-color: #f2e9f8; color: teal; text-align: center;">
+
+            <label for="email" style="display: block; margin-bottom: 10px; color: teal; text-align: center;">Email:</label>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal; background-color: #f2e9f8; color: teal; text-align: center;">
+
+            <label for="inquiry" style="display: block; margin-bottom: 10px; color: teal; text-align: center;">Inquiry Type:</label>
+            <select id="inquiry" name="inquiry" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal; background-color: #f2e9f8; color: teal; text-align: center;">
+                <option value="business">Business Inquiry</option>
+                <option value="job">Job Opportunity</option>
+                <option value="general">General Business Communication</option>
+                <option value="other" style="font-style: italic; color: gray;">Other</option>
+            </select>
+
+            <label for="message" style="display: block; margin-bottom: 10px; color: teal; text-align: center;">Message:</label>
+            <textarea id="message" name="message" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal; background-color: #f2e9f8; color: teal; resize: vertical; height: 100px; font-family: 'Alkatra', Arial, sans-serif; text-align: center;"></textarea>
+
+            <label for="file-input" style="display: block; margin-bottom: 10px; color: teal; text-align: center;">Select A File (If Applicable):</label>
+
+            <div class="file-input">
+                <input type="file" id="attachment" name="attachment">            </div>
+<br>
+            <input type="submit" value="Submit" style="padding: 10px 20px; background-color: teal; color: lavender; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; text-align: center; justify-content: center; align-items: center; width: 100%; "> 
+        </form>
+        <div id="thankYouMessage"></div> 
+        <div id="resubmitLink"></div>
+
+</div>
+</div>
+
+<div style="float: right; width: 50%; margin-left: 15%; height: 100%; text-align: center; margin-right: 2.5%;">
+    <div style="padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); background-color: lavender;">
+        <h1 style="font-family: 'Alkatra'; margin-top: 0; color: teal;"> Call Us! </h1>
+        <p style="font-family: 'Alkatra'; font-size: 18px; color: teal;">Phone Number: <span style="color: teal;">(954) - 242 - 1048</span></p>
+    </div>
+    <form action="https://formsubmit.co/your@email.com" method="POST">
+    <form style="padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); background-color: lavender; margin-top: 20px;">
+        <h2 style="font-family: 'Alkatra'; color: teal; margin-top: 0;">Want a Call Back?</h2>
+        <input type="tel" id="callbackNumber" placeholder="----- Enter your phone number -----"
+               style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal; background-color: lavender; color: teal; text-align: center;"> <br> <br> <br> <textarea id="reason" placeholder="--- BRIEFLY describe your reason for calling us today. ----" maxlength="50"
+                  style="width: 100%; text-align: center; padding: 10px; border-radius: 5px; border: 1px solid teal; background-color: lavender; color: teal; resize: vertical; font-family: 'Alkatra';"></textarea>
+        <div id="characterCount" style="font-family: 'Alkatra'; color: teal; margin-top: 5px;"></div>
+        <button type="submit" style="padding: 10px 20px; font-family: 'ALkatra'; background-color: teal; color: lavender; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; text-align: center;">Submit</button>
+    </form>
+    <div id="thankYouMessage"></div> 
+        <div id="resubmitLink"></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+    var textarea = document.getElementById('reason');
+    var characterCount = document.getElementById('characterCount');
+
+    textarea.addEventListener('input', function() {
+        var count = textarea.value.length;
+        characterCount.textContent = count + "/50 Characters";
+    });
+
+		window.addEventListener('load', function() {
+		  document.body.style.opacity = 1;
+		});
+
+</script>
+
+
+
+
+</body>
+
+</html>

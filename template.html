@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Poppins:wght@100&display=swap" rel="stylesheet">
+		
+		<style>
+
+		*{margin: 0;}
+
+		body { background-color: lavender; color: teal;}
+		
+		nav{
+			width: 100%;
+			background-color: lavender;
+			}
+		
+		nav ul {
+				text-align: center;
+				}
+				
+		nav ul li{
+			list-style:none;
+			display: inline-block;
+			}
+		nav ul li a{
+			display: block;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: teal;
+			font-size: 20px;
+			font-family: 'Alkatra' , Sans-Serif;
+			letter-spacing: 2px;
+			font-weight: 600;
+			padding: 20px;
+			}
+			
+		nav ul li a:hover {
+							background-color:#211B4385;
+							transition: all ease 1.5s;
+							}
+
+							marquee {
+  background-color: teal;
+  font-family: 'Alkatra', Sans-Serif;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.header1 {
+  
+  color: #FFE5B4;
+height: 10%;
+  background-color: royalblue;
+  text-align: center;
+  width: 50%;
+  font-family:'Alkatra', Sans-Serif;
+}
+
+.header2 {
+	color: royalblue;
+	height:10%;
+	background-color:#FFE5B4;
+	text-align: center;
+	width: 50%;
+	font-family: 'Alkatra', Sans-Serif;
+}
+
+.container {
+        display: flex;
+      }
+
+figure { border: dotted 10px; width: 25%; height: 60%; font-size: 12.3px; font-family: 'Alkatra', Sans-Serif;}
+
+img {align-items: center; }
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.capsule{
+
+min-width: 180px;
+padding: 20px 0;
+border-radius: 100px;
+position: relative;
+z-index: 9;
+transition: all ease 0.5s;
+text-decoration: none;
+display: inline-block;
+text-align: center;
+color: #252E2F;
+background-color: #FFFFFF;
+font-size: 20px;
+font-weight: 700;
+margin: 0 100px;
+margin-left: auto;
+margin-left: 30%;
+}
+
+.capsule:before{
+
+content:'';
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+transform: scale(1,1);
+background-color: #FFFFFF;
+border-radius: 100px;
+opacity: .4;
+z-index: -1;
+transition: all ease 0.5s;
+animation: capsuleBefore 2s linear 0s infinite; 
+}
+
+@keyframes capsuleBefore {
+
+	100%{
+		transform: scale(1.0, 1.2);
+		opacity: 0;
+		}
+	}
+		
+.capsule:after{
+
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	transform: scale(1,1);
+	background-color: #FFFFFF;
+	border-radius: 100px;
+	opacity: .2;
+	z-index: -1;
+	transition: all ease 0.5s;
+	animation: capsuleAfter 2s linear 0s infinite; 
+	}
+		
+.capsule:hover:after{
+
+animation: capsuleAfter 2s linear 0s infinite;
+}
+
+@keyframes capsuleAfter {
+
+	100%{
+		transform: scale(1.4, 1.6);
+		opacity: 0;
+	}
+}
+	
+.capsule:hover, 
+.capsule:hover:before,
+.capsule:hover:after{
+
+	background-color: lightcoral;
+	
+	
+	}
+
+.container3 { width: 100%; display: flex;}
+
+figcaption { width: 90%; }
+
+
+	</style>
+</head>
+
+<body>
+
+<nav>
+
+	<marquee behavior="scroll" direction="left">
+		JOE'S PEANUTS: "ALWAYS HANDMADE & QUALITY FOOD"
+	  </marquee>
+<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="#">About</a></li>
+	<li><a href="#">Menu</a></li>
+	<li><a href="#">Catering</a></li>
+	<li><a href="#">Contact</a></li>
+	
+</ul>
+
+</nav>
+
+<div class="container">
+
+<div class="header1">
+
+<H1 style="padding-top: 10px;"> Menu - SPICY Peanuts</H1>
+
+</div>
+
+<div class="header2">
+
+<H1 style="padding-top: 10px;"> **Free Shipping For Orders Over $20.**</h1>
+
+</DIV>
+
+</div>
+
+<br>
+
+<div class="container3">
+
+<figure style="margin-left: 1%;" class="container2">
+
+	<h1> Donkwa </h1>
+
+	<img src="images/Donkwa.jpg" alt="Donkwa Peanut Balls" width="40%" height="10%">
+
+	<br>
+
+	<figcaption> Donkwa is a savory Nigerian snack that is made with cornmeal & groundnuts (also known as peanuts). It may also have additional ingredients added to it (e.g., dates). These snacks leave one with a delicious & savory yet very affordable price. </figcaption>
+
+		
+<br>
+	<a style="width: 10%;" class="capsule" href="#"> ORDER NOW! </a>
+</figure>
+
+<figure style="margin-left: 9.5%;" class="container2">
+
+	<h1> Planters Heat </h1>
+
+	<img src="images/PlantersHeat.png" alt="Planters Heat Peanuts" height="20%" width="50%">
+	
+	<br>
+	
+	<figcaption> With an irresistible crunchy texture, satisfying taste, Planters Heat Peanuts are cooked without oil. Seasoned with a touch of sea salt, these nuts are lower in sodium but not flavor, making them a great way to fulfill your cravings for a salty snack without the guilt.  These oil roasted peanuts deliver the heat you seek and help curb hunger for substantial snacking. </figcaption>
+	
+	<br>
+	
+	<a style="width: 10%;" class="capsule" href="#"> ORDER NOW! </a>
+
+</figure>
+
+<figure style="margin-left: 9%;" class="container2">
+
+	<h1> Cajun </h1>
+	
+	<img src="images/Cajun.jpg" alt="Sichaun Peanuts" width="40%" height="10%">
+	
+	<br>
+	
+	<figcaption> Cajun peanuts are made by coating roasted or fried peanuts with a blend of spices commonly used in Cajun cooking. These spices typically include paprika, garlic powder, onion powder, cayenne pepper, and other seasonings that vary depending on the recipe. The peanuts are then roasted or fried to give them a crunchy texture and to help the spices adhere to the surface of the nut.  </figcaption>
+	
+	<br>
+	
+		<a style="width: 10%;" class="capsule" href="#"> ORDER NOW! </a>
+		
+</figure>
+
+</div>
+
+</main>
+
+</body>
+
+</html>

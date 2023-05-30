@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Visit Us! </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Poppins:wght@100&display=swap" rel="stylesheet">
+	<link href="css/FoodTruckEXTStyles.css" rel="stylesheet">
+	<link rel = "icon" href = "images/PristinePeanutsSecondaryLogo.png"
+        type = "image/x-icon">
+
+		<style>
+
+		*{margin: 0;}
+
+		body { background-color: lavender; color: teal; text-align: center; font-family: 'Alkatra'; opacity: 0;
+      animation: fadeInAnimation 0.25s forwards;
+      transition: opacity 0.25s;}
+		
+		nav{
+			width: 100%;
+			background-color: lavender;
+			}
+		
+		nav ul {
+				text-align: center;
+				}
+				
+		nav ul li{
+			list-style:none;
+			display: inline-block;
+			}
+		nav ul li a{
+			display: block;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: teal;
+			font-size: 20px;
+			font-family: 'Alkatra' , Sans-Serif;
+			letter-spacing: 2px;
+			font-weight: 600;
+			padding: 20px;
+			}
+			
+		nav ul li a:hover {
+							background-color:#211B4385;
+							transition: all ease 1.5s;
+							}
+
+							marquee {
+  background-color: lavender;
+  font-family: 'Alkatra', Sans-Serif;
+  color: teal;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.header1 {
+  
+  color: #FFE5B4;
+height: 10%;
+  background-color: royalblue;
+  text-align: center;
+  width: 100%;
+  font-family:'Alkatra', Sans-Serif; }
+
+.container {
+        display: flex;
+      }
+
+	  .container2 {
+            max-width: 600px;
+            margin: 0 0 0 0;
+            padding: 20px;
+            border-radius: 100px;
+			font-family: 'Alkatra'; 
+        }
+
+		@keyframes floatInFromRight {
+      0% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .float-from-right {
+      animation: floatInFromRight 1s ease-in-out;
+    }
+
+
+		option { font-family: 'Alkatra'; text-align: center;}
+
+        h2 {
+            margin-bottom: 20px;
+			text-align: center;
+			font-family: 'Alkatra';
+
+        }
+
+        .locations {
+            margin-top: 20px; text-align: center;
+        }
+
+        .location {
+            margin-bottom: 10px;
+
+        }
+
+		.separator {
+            width: 1px;
+            background-color: #000;
+            margin: 0 20px;
+        }
+
+        select {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: teal;
+            color: lavender;
+            border: none;
+			font-family: 'Alkatra';
+			font-size: 20px;
+			text-align: center;
+			margin-left: 10%;
+        }
+
+		
+        table {
+            width: 50%;
+            border-collapse: collapse;
+			float: right;
+			margin-right: 10%;
+			font-family: 'Alkatra';
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid teal;
+        }
+        
+        th {
+            background-color: lavender;
+
+		
+
+			
+            
+	</style>
+
+	
+
+	
+<script>
+	function showLocations() {
+		var selectElement = document.getElementById("monthSelect");
+		var month = selectElement.value;
+
+		var locationsContainer = document.getElementById("locationsContainer");
+		locationsContainer.innerHTML = "";
+
+		if (month === "") {
+			var selectMessage = document.createElement("div");
+			selectMessage.className = "location";
+			selectMessage.textContent = "Please select a month.";
+
+			locationsContainer.appendChild(selectMessage);
+		} else {
+			var locations = getLocations(month);
+
+			if (locations.length > 0) {
+				locations.forEach(function(location) {
+					var locationElement = document.createElement("div");
+					locationElement.className = "location";
+					locationElement.textContent = location;
+
+					locationsContainer.appendChild(locationElement);
+				});
+			} else {
+				var noLocationsElement = document.createElement("div");
+				noLocationsElement.className = "location";
+				noLocationsElement.textContent = "No locations available for this month.";
+
+				locationsContainer.appendChild(noLocationsElement);
+			}
+		}
+	}
+
+	function getLocations(month) {
+		var locations = [];
+
+		if (month === "January") {
+			locations.push("Miami Beach");
+			locations.push("Fort Lauderdale");
+		} else if (month === "February") {
+			locations.push("Key West");
+			locations.push("Boca Raton");
+		} else if (month === "March") {
+			locations.push("West Palm Beach");
+			locations.push("Coral Gables");
+		} else if (month === "April") {
+			locations.push("Hollywood");
+			locations.push("Doral");
+		} else if (month === "May") {
+			locations.push("Pompano Beach");
+			locations.push("Delray Beach");
+		} else if (month === "June") {
+			locations.push("North Miami");
+			locations.push("Deerfield Beach");
+		} else if (month === "July") {
+			locations.push("Miami Gardens");
+			locations.push("Coconut Creek");
+		} else if (month === "August") {
+			locations.push("Hialeah");
+			locations.push("Boynton Beach");
+		} else if (month === "September") {
+			locations.push("Miramar");
+			locations.push("Lake Worth");
+		} else if (month === "October") {
+			locations.push("Sunrise");
+			locations.push("Greenacres");
+		} else if (month === "November") {
+			locations.push("Plantation");
+			locations.push("Royal Palm Beach");
+		} else if (month === "December") {
+			locations.push("Davie");
+			locations.push("Wellington");
+		}
+
+		return locations;
+	}
+
+	
+window.addEventListener('load', function() {
+		  document.body.style.opacity = 1;
+		});
+
+</script>
+</head>
+
+<body>
+	<nav style="text-align: center;">
+
+<marquee behavior="scroll" direction="left">
+	PRISTINE PEANUTS: "ALWAYS HANDMADE & QUALITY FOOD"
+  </marquee>
+
+<div style="display: flex; align-items: center; background-color: teal; padding: 10px;">
+  <a href="index.html"><img style="text-align: left; align-items: ; justify-content: left;" src="images/PristinePeanutsSecondaryLogo.png" alt="Logo" width="150px" height="30%"></a>
+  <ul style="list-style-type: none;">
+	<li style="margin-right: 10px;"><a href="orderfood.html" style="text-decoration: none; color: #fff;">Order Food</a></li>
+	<li style="margin-right: 10px;"><a href="ourstory.html" style="text-decoration: none; color: #fff;">Our Story</a></li>
+	<li style="margin-right: 10px;"><a href="visitus.html" style="text-decoration: none; color: #fff;">Visit Us</a></li>
+	<li style="margin-right: 10px;"><a href="contact.html" style="text-decoration: none; color: #fff;">Contact</a></li>
+	<li style="margin-right: 10px;"><a href="requestthefoodtruck.html" style="text-decoration: none; color: #fff;">Request The Food Truck</a> </li>
+	</ul>
+</div>
+
+</nav>
+
+<div class="container">
+
+<div class="header1">
+
+<H1 style="padding-top: 10px;"> Visit Us!</H1>
+
+</div>
+
+</div>
+
+<br>
+
+
+<div class="containermax">
+
+	<div class="sliding-div">
+        <div class="bouncing-div">
+<div style="width: 50%; float: left; font-size: x-large;">
+	<h2> In The Month Of... </h2>
+	<label for="monthSelect"></label>
+	<select id="monthSelect" onchange="showLocations()">
+		<option value="">---- Select Month ----</option>
+		<option value="January">January</option>
+		<option value="February">February</option>
+		<option value="March">March</option>
+		<option value="April">April</option>
+		<option value="May">May</option>
+		<option value="June">June</option>
+		<option value="July">July</option>
+		<option value="August">August</option>
+		<option value="September">September</option>
+		<option value="October">October</option>
+		<option value="November">November</option>
+		<option value="December">December</option>
+	</select> <br> <br>
+	<h2> We're Going To... </h2>
+	<div id="locationsContainer" class="locations"></div>
+</div>
+</div>
+
+<br>
+
+
+
+<div style="width: 50%; float: right; text-align: center;">
+
+	<h2 style='text-align: center; margin-right: 10%; font-size: 40px;'> Our Business Hours: </h2>
+
+	<br>
+
+    <table style="width: 50%; float: right; margin-right: 30%;">
+        <tr>
+            <th>Day</th>
+            <th>Opening Hours</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>10:00 AM - 6:00 PM</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>10:00 AM - 6:00 PM</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>10:00 AM - 6:00 PM</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>10:00 AM - 6:00 PM</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>10:00 AM - 8:00 PM</td>
+        </tr>
+        <tr>
+            <td>Saturday</td>
+            <td>12:00 PM - 8:00 PM</td>
+        </tr>
+        <tr>
+            <td>Sunday</td>
+            <td>Closed</td>
+        </tr>
+    </table>
+
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</body>
+
+</html>
