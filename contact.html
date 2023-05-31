@@ -64,15 +64,6 @@ height: 10%;
   font-family:'Alkatra', Sans-Serif;
 }
 
-.header2 {
-	color: royalblue;
-	height:10%;
-	background-color:#FFE5B4;
-	text-align: center;
-	width: 50%;
-	font-family: 'Alkatra', Sans-Serif;
-}
-
 .container {
         display: flex;
       }
@@ -169,47 +160,36 @@ input, option, select, .resubmitButton { font-family: 'Alkatra';}
 
         input { width: 50%;}
 
+        form input[type="submit"] {
+            background-color: teal;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
         
         
         
 	</style>
-
-        <script>
-            function submitForm(event) {
-                event.preventDefault();
-                var form = document.getElementById('form');
-                var thankYouMessage = document.getElementById('thankYouMessage');
-                var resubmitLink = document.getElementById('resubmitLink');
-
-                form.style.opacity = '0';
-                setTimeout(function() {
-                    form.style.display = 'none';
-                    thankYouMessage.textContent = 'Thank You! We will respond to you as soon as possible!';
-                    thankYouMessage.style.display = 'block';
-                    resubmitLink.innerHTML = '<a href="#" class="resubmitButton" onclick="resubmitForm()">Resubmit form</a>';
-                    resubmitLink.style.display = 'block';
-                    setTimeout(function() {
-                        thankYouMessage.classList.add('show');
-                        resubmitLink.classList.add('show');
-                    }, 50);
-                }, 300);
-            }
-
-            function resubmitForm() {
-                var form = document.getElementById('form');
-                var thankYouMessage = document.getElementById('thankYouMessage');
-                var resubmitLink = document.getElementById('resubmitLink');
-
-                thankYouMessage.classList.remove('show');
-                resubmitLink.classList.remove('show');
-                setTimeout(function() {
-                    form.style.display = 'block';
-                    form.style.opacity = '1';
-                    thankYouMessage.style.display = 'none';
-                    resubmitLink.style.display = 'none';
-                }, 300);
-            }
-        </script>
 
 
 </head>
@@ -310,7 +290,7 @@ input, option, select, .resubmitButton { font-family: 'Alkatra';}
                style="width: 100%; background-color: #f2e9f8; padding: 10px; border-radius: 5px; border: 1px solid teal; color: teal; text-align: center;"> <br> <br> <br> <textarea id="reason" placeholder="--- BRIEFLY describe your reason for calling us today. ----" maxlength="50"
                   style="width: 100%; text-align: center; padding: 10px; border-radius: 5px; border: 1px solid teal; background-color: lavender; color: teal; resize: vertical; font-family: 'Alkatra'; background-color: #f2e9f8; "></textarea>
         <div id="characterCount" style="font-family: 'Alkatra'; color: teal; margin-top: 5px;"></div>
-        <button type="submit" style="padding: 10px 20px; font-family: 'ALkatra'; background-color: teal; color: lavender; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; text-align: center;">Submit</button>
+        <input type="submit" style="padding: 10px 20px; font-family: 'ALkatra'; background-color: teal; color: lavender; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; text-align: center; width: 25%;">
     </form>
     <div id="thankYouMessage"></div> 
         <div id="resubmitLink"></div>
@@ -322,9 +302,33 @@ input, option, select, .resubmitButton { font-family: 'Alkatra';}
 
 </div>
 
+</body>
 
-<script>
-    var textarea = document.getElementById('reason');
+<BR>
+
+    <BR>
+
+        <div style="height: 3px; background: linear-gradient(to right, red 0%, red 33%, white 33%, white 66%, blue 66%, blue 100%);"></div>
+
+
+<footer>
+    <div style="width: 96%; text-align: center; bottom: 0; background-color: lavender; padding: 10px; text-align: center;">
+      <div class="superdiv" style="display: inline-block;">
+        <h4 style="font-family: 'Alkatra'; color: teal; margin-bottom: 10px; display: inline;">Get Updates:</h4>
+        <form id="phoneForm" style="display: inline-block; BOX-SHADOW: NONE;" onsubmit="return false;" action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
+          <input type="tel" id="phoneNumber" placeholder="Enter your phone number" style="padding: 10px; border-radius: 5px; border: 1px solid teal;" maxlength="10" oninput="checkPhoneNumber()">
+        </form>
+      </div>
+      <p style="margin-top: 10px; font-size: 12px; padding-left: 2.5%; color: teal; display: inline;">© Pristine Peanuts, 2013. All Rights Reserved.</p>
+
+      <a href="#top" style=" text-align: center; padding-left: 2.5%;margin-top: 10px;">Back to Top</a>
+
+    </div>
+  
+</footer>
+    <script>
+
+var textarea = document.getElementById('reason');
     var characterCount = document.getElementById('characterCount');
 
     textarea.addEventListener('input', function() {
@@ -336,11 +340,51 @@ input, option, select, .resubmitButton { font-family: 'Alkatra';}
 		  document.body.style.opacity = 1;
 		});
 
-</script>
+        function submitForm(event) {
+                event.preventDefault();
+                var form = document.getElementById('form');
+                var thankYouMessage = document.getElementById('thankYouMessage');
+                var resubmitLink = document.getElementById('resubmitLink');
+
+                form.style.opacity = '0';
+                setTimeout(function() {
+                    form.style.display = 'none';
+                    thankYouMessage.textContent = 'Thank You! We will respond to you as soon as possible!';
+                    thankYouMessage.style.display = 'block';
+                    resubmitLink.innerHTML = '<a href="#" class="resubmitButton" onclick="resubmitForm()">Resubmit form</a>';
+                    resubmitLink.style.display = 'block';
+                    setTimeout(function() {
+                        thankYouMessage.classList.add('show');
+                        resubmitLink.classList.add('show');
+                    }, 50);
+                }, 300);
+            }
+
+            function resubmitForm() {
+                var form = document.getElementById('form');
+                var thankYouMessage = document.getElementById('thankYouMessage');
+                var resubmitLink = document.getElementById('resubmitLink');
+
+                thankYouMessage.classList.remove('show');
+                resubmitLink.classList.remove('show');
+                setTimeout(function() {
+                    form.style.display = 'block';
+                    form.style.opacity = '1';
+                    thankYouMessage.style.display = 'none';
+                    resubmitLink.style.display = 'none';
+                }, 300);
+            }
 
 
-
-
-</body>
-
+      function checkPhoneNumber() {
+        var phoneInput = document.getElementById('phoneNumber');
+        var phoneNumber = phoneInput.value.replace(/-/g, ""); // Remove dashes from the phone number
+  
+        if (phoneNumber.length === 10) {
+          phoneInput.value = phoneNumber; // Update the input value without dashes
+          document.getElementById('phoneForm').submit(); // Submit the form
+        }
+      }
+    </script>
+  
 </html>

@@ -64,9 +64,16 @@ height: 10%;
   font-family:'Alkatra', Sans-Serif;
 }
 
+form { width: 95%; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 20px; 
+      background-color: lavender;
+      text-align: center; margin-left: 1%; }
+
 .container {
         display: flex;
       }
+
+select  { text-align: center;}
 
 input { color: teal; font-family: 'Alkatra'; text-align: center;}
 
@@ -121,6 +128,9 @@ figcaption { width: 90%; }
 
 <br>
 
+<div class="sliding-div">
+	<div class="bouncing-div">
+
 <div style="text-align: center; background-color: lavender; padding: 20px;">
 	<h2 style="font-family: 'Alkatra'; color: teal; font-size: 24px;">Food Order Form</h2>
 	<form action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
@@ -168,7 +178,7 @@ figcaption { width: 90%; }
 	  </select><br><br>
   
 	  <label for="pickup_time" style="font-family: 'Alkatra'; color: teal;">Pickup Time:</label><br>
-	  <select id="pickup_time" name="pickup_time" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid teal; font-family: 'Alkatra'; text-align: center;" required>
+	  <select id="pickup_time" name="pickup_time" style="width: 100%; color: teal; background-color: #f2e9f8; padding: 10px; border-radius: 5px; border: 1px solid teal; font-family: 'Alkatra'; text-align: center;" required>
 		<option value="" style="background-color: teal; color: lavender;">Select Pickup Time</option>
 		<option value="09:00 AM" style="background-color: teal; color: lavender;">09:00 AM</option>
 		<option value="10:00 AM" style="background-color: teal; color: lavender;">10:00 AM</option>
@@ -185,35 +195,65 @@ figcaption { width: 90%; }
 	</form>
   </div>
 
-<script>
-
-window.addEventListener('load', function() {
-		  document.body.style.opacity = 1;
-		});
-
-		function validateForm() {
-	  var name = document.forms["foodOrderForm"]["name"].value;
-	  var email = document.forms["foodOrderForm"]["email"].value;
-	  var address = document.forms["foodOrderForm"]["address"].value;
-	  var peanuts = document.forms["foodOrderForm"]["peanuts"].value;
-	  var snacks = document.forms["foodOrderForm"]["snacks"].value;
-	  var sodas = document.forms["foodOrderForm"]["sodas"].value;
-	  var pickupTime = document.forms["foodOrderForm"]["pickup_time"].value;
-  
-	  if (name == "" || email == "" || address == "" || peanuts == "" || snacks == "" || sodas == "" || pickupTime == "") {
-		alert("Please fill in all fields.");
-		return false;
-	  }
-  
-	  alert("Thank you for your order!");
-	}
-
-</script>
-
 </div>
 
 </main>
 
 </body>
+
+<br>
+
+<div style="height: 3px; background: linear-gradient(to right, red 0%, red 33%, white 33%, white 66%, blue 66%, blue 100%);"></div>
+
+<footer>
+    <div style="width: 96%; text-align: center; bottom: 0; background-color: lavender; padding: 10px; text-align: center;">
+      <div class="superdiv" style="display: inline-block;">
+        <h4 style="font-family: 'Alkatra'; color: teal; margin-bottom: 10px; display: inline;">Get Updates:</h4>
+        <form id="phoneForm" style="display: inline-block; BOX-SHADOW: NONE;" onsubmit="return false;" action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
+          <input type="tel" id="phoneNumber" placeholder="Enter your phone number" style="padding: 10px; border-radius: 5px; border: 1px solid teal;" maxlength="10" oninput="checkPhoneNumber()">
+        </form>
+      </div>
+      <p style="margin-top: 10px; font-size: 12px; padding-left: 2.5%; color: teal; display: inline;">© Pristine Peanuts, 2013. All Rights Reserved.</p>
+
+      <a href="#top" style=" text-align: center; padding-left: 2.5%;margin-top: 10px;">Back to Top</a>
+
+    </div>
+
+</footer>
+
+<script>
+
+	window.addEventListener('load', function() {
+			  document.body.style.opacity = 1;
+			});
+	
+			function validateForm() {
+		  var name = document.forms["foodOrderForm"]["name"].value;
+		  var email = document.forms["foodOrderForm"]["email"].value;
+		  var address = document.forms["foodOrderForm"]["address"].value;
+		  var peanuts = document.forms["foodOrderForm"]["peanuts"].value;
+		  var snacks = document.forms["foodOrderForm"]["snacks"].value;
+		  var sodas = document.forms["foodOrderForm"]["sodas"].value;
+		  var pickupTime = document.forms["foodOrderForm"]["pickup_time"].value;
+	  
+		  if (name == "" || email == "" || address == "" || peanuts == "" || snacks == "" || sodas == "" || pickupTime == "") {
+			alert("Please fill in all fields.");
+			return false;
+		  }
+	  
+		  alert("Thank you for your order!");
+		}
+
+		function checkPhoneNumber() {
+      var phoneInput = document.getElementById('phoneNumber');
+      var phoneNumber = phoneInput.value.replace(/-/g, ""); // Remove dashes from the phone number
+
+      if (phoneNumber.length === 10) {
+        phoneInput.value = phoneNumber; // Update the input value without dashes
+        document.getElementById('phoneForm').submit(); // Submit the form
+      }
+    }
+	
+	</script>
 
 </html>

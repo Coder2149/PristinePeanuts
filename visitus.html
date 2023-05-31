@@ -356,8 +356,44 @@ window.addEventListener('load', function() {
 
 </div>
 
+</div>
+
 </main>
 
 </body>
+
+<br> <br> <br> <br> <br> <br> <br> <br><br> <br> <br> <br> <br> <br> <br> <br><br> <br> <br> <br><br> <br> 
+
+<div style="height: 3px; background: linear-gradient(to right, red 0%, red 33%, white 33%, white 66%, blue 66%, blue 100%);"></div>
+
+
+<footer>
+    <div style="width: 96%; text-align: center; bottom: 0; background-color: lavender; padding: 10px; text-align: center;">
+      <div class="superdiv" style="display: inline-block;">
+        <h4 style="font-family: 'Alkatra'; color: teal; margin-bottom: 10px; display: inline;">Get Updates:</h4>
+        <form id="phoneForm" style="display: inline-block; BOX-SHADOW: NONE;" onsubmit="return false; action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
+          <input type="tel" id="phoneNumber" placeholder="Enter your phone number" style="padding: 10px; border-radius: 5px; border: 1px solid teal;" maxlength="10" oninput="checkPhoneNumber()">
+        </form>
+      </div>
+      <p style="margin-top: 10px; font-size: 12px; padding-left: 2.5%; color: teal; display: inline;">© Pristine Peanuts, 2013. All Rights Reserved.</p>
+
+      <a href="#top" style=" text-align: center; padding-left: 2.5%;margin-top: 10px;">Back to Top</a>
+
+    </div>
+
+</footer>
+
+<script>
+
+function checkPhoneNumber() {
+      var phoneInput = document.getElementById('phoneNumber');
+      var phoneNumber = phoneInput.value.replace(/-/g, ""); // Remove dashes from the phone number
+
+      if (phoneNumber.length === 10) {
+        phoneInput.value = phoneNumber; // Update the input value without dashes
+        document.getElementById('phoneForm').submit(); // Submit the form
+      }
+
+</script>
 
 </html>

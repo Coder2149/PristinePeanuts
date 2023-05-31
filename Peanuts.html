@@ -236,7 +236,7 @@ figcaption { width: 90%; }
 	
 		<h1> Buffalo Peanuts </h1>
 	
-		<img src="images/BuffaloPeanuts" alt="Buffalo Peanuts" height="20%" width="50%">
+		<img src="images/BuffaloPeanuts.png" alt="Buffalo Peanuts" height="20%" width="50%">
 		
 		<br>
 		
@@ -291,7 +291,7 @@ figcaption { width: 90%; }
     }
   </script>
 </head>
-	<a href="ordering.html"> <button id="orderButton" style="background-color: teal; font-family: 'Alkatra'; font-size: 20px; color: lavender; border: none; border-radius: 20px; padding: 20px 40px; position: relative;" onmouseover="this.style.animation = 'ray-effect 1s linear infinite';" onmouseout="this.style.animation = '';" onclick="decreaseButtonSize();">
+	<a href="orderfood.html"> <button id="orderButton" style="background-color: teal; font-family: 'Alkatra'; font-size: 20px; color: lavender; border: none; border-radius: 20px; padding: 20px 40px; position: relative;" onmouseover="this.style.animation = 'ray-effect 1s linear infinite';" onmouseout="this.style.animation = '';" onclick="decreaseButtonSize();">
 		Order Now!
 		<span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; border-radius: 50%; background-color: transparent; pointer-events: none;"></span>
 	  </button>
@@ -301,14 +301,43 @@ figcaption { width: 90%; }
 <br>
 <br>
 
+</main>
+
+</body>
+
+<div style="height: 3px; background: linear-gradient(to right, red 0%, red 33%, white 33%, white 66%, blue 66%, blue 100%);"></div>
+
+
+<footer>
+    <div style="width: 96%; text-align: center; bottom: 0; background-color: lavender; padding: 10px; text-align: center;">
+      <div class="superdiv" style="display: inline-block;">
+        <h4 style="font-family: 'Alkatra'; color: teal; margin-bottom: 10px; display: inline;">Get Updates:</h4>
+        <form id="phoneForm" style="display: inline-block; BOX-SHADOW: NONE;" onsubmit="return false;" action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
+          <input type="tel" id="phoneNumber" placeholder="Enter your phone number" style="padding: 10px; border-radius: 5px; border: 1px solid teal;" maxlength="10" oninput="checkPhoneNumber()">
+        </form>
+      </div>
+      <p style="margin-top: 10px; font-size: 12px; padding-left: 2.5%; color: teal; display: inline;">© Pristine Peanuts, 2013. All Rights Reserved.</p>
+
+      <a href="#top" style=" text-align: center; padding-left: 2.5%;margin-top: 10px;">Back to Top</a>
+
+    </div>
+
+</footer>
+
 <script>
 	window.addEventListener('load', function() {
 	  document.body.style.opacity = 1;
 	});
+
+	function checkPhoneNumber() {
+      var phoneInput = document.getElementById('phoneNumber');
+      var phoneNumber = phoneInput.value.replace(/-/g, ""); // Remove dashes from the phone number
+
+      if (phoneNumber.length === 10) {
+        phoneInput.value = phoneNumber; // Update the input value without dashes
+        document.getElementById('phoneForm').submit(); // Submit the form
+      }
+    }
   </script>
-
-</main>
-
-</body>
 
 </html>

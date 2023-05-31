@@ -238,7 +238,7 @@ figcaption { width: 90%; }
     
             <h1 style="margin-bottom: 20px; color: teal;">Request Us At Your Event!</h1>
     
-            <form style="text-align: center;" action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
+            <form action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
 
     
                 <label for="name" style="display: block; margin-bottom: 10px; font-weight: bold; text-align: center; color: teal;">Name:</label>
@@ -260,13 +260,13 @@ figcaption { width: 90%; }
                 <textarea id="location" name="location" required style="width: 75%; padding: 10px; border: none; border-radius: 5px; background-color: #f2e9f8; margin-bottom: 10px; color: teal; text-align: center; resize: vertical; height: 100px; outline: 2px solid teal; font-family: 'Alkatra';"></textarea>
     
                 <label for="additional-info" style="display: block; margin-bottom: 10px; font-weight: bold; text-align: center; color: teal;">Additional Information:</label>
+                
                 <textarea id="additional-info" name="additional-info" style="width: 75%; padding: 10px; border: none; border-radius: 5px; background-color: #f2e9f8; margin-bottom: 10px; color: teal; text-align: center; resize: vertical; height: 100px; outline: 2px solid teal; font-family: 'Alkatra';"></textarea>
                 <br>
     
                 <input type="submit" value="Submit" style="background-color: teal; font-family: 'Alkatra'; color: lavender; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; animation: buttonAnimation 2s infinite;">
+
             </form>
-    
-            <p class="thank-you-message" style="margin-top: 20px; color: teal; font-weight: bold; display: none;">Thank you for your request! We will get back to you as soon as possible!</p>
     
         </div>
     </div>
@@ -282,7 +282,7 @@ margin-right: 15%;
 
     <div class="form-container">
         <h1>Food Truck Feedback</h1>
-        	<form action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
+        	<form style="padding-right: 13%;" action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
             <label for="name">Name:</label>
             <input style="width: 100%;" type="text" id="name" name="name" required>
 
@@ -331,34 +331,8 @@ margin-right: 15%;
 
             <input type="submit" value="Submit" style="font-family: 'Alkatra';">
 
-            <p class="thank-you-message" id="thank-you-message">Thank you for your feedback!</p>
         </form>
     </div>
-
-    <script>
-        const ratingContainer = document.querySelector('.rating-container');
-        const ratingInputs = document.querySelectorAll('.rating-container input');
-
-        ratingContainer.addEventListener('click', function(event) {
-            const target = event.target;
-            if (target.matches('label')) {
-                const rating = target.getAttribute('for');
-                document.getElementById(rating).checked = true;
-            }
-        });
-
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            document.getElementById('thank-you-message').style.display = 'block';
-            document.querySelector('form').reset();
-        });
-
-        
-window.addEventListener('load', function() {
-		  document.body.style.opacity = 1;
-		});
-
-    </script>
 
 </div>
 
@@ -369,6 +343,61 @@ window.addEventListener('load', function() {
 </html>
 
 </main>
+
+<div style="height: 3px; background: linear-gradient(to right, red 0%, red 33%, white 33%, white 66%, blue 66%, blue 100%);"></div>
+
+
+<footer>
+    <div style="width: 96%; text-align: center; bottom: 0; background-color: lavender; padding: 10px; text-align: center;">
+      <div class="superdiv" style="display: inline-block;">
+        <h4 style="font-family: 'Alkatra'; color: teal; margin-bottom: 10px; display: inline;">Get Updates:</h4>
+        <form id="phoneForm" style="display: inline-block; BOX-SHADOW: NONE;" onsubmit="return false;" " action="https://formsubmit.co/saumitkt@gmail.com" method="POST">
+          <input type="tel" id="phoneNumber" placeholder="Enter your phone number" style="padding: 10px; border-radius: 5px; border: 1px solid teal;" maxlength="10" oninput="checkPhoneNumber()">
+        </form>
+      </div>
+      <p style="margin-top: 10px; font-size: 12px; padding-left: 2.5%; color: teal; display: inline;">© Pristine Peanuts, 2013. All Rights Reserved.</p>
+
+      <a href="#top" style=" text-align: center; padding-left: 2.5%;margin-top: 10px;">Back to Top</a>
+
+    </div>
+
+</footer>
+
+
+<script>
+    const ratingContainer = document.querySelector('.rating-container');
+    const ratingInputs = document.querySelectorAll('.rating-container input');
+
+    ratingContainer.addEventListener('click', function(event) {
+        const target = event.target;
+        if (target.matches('label')) {
+            const rating = target.getAttribute('for');
+            document.getElementById(rating).checked = true;
+        }
+    });
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('thank-you-message').style.display = 'block';
+        document.querySelector('form').reset();
+    });
+
+    
+window.addEventListener('load', function() {
+      document.body.style.opacity = 1;
+    });
+
+    function checkPhoneNumber() {
+      var phoneInput = document.getElementById('phoneNumber');
+      var phoneNumber = phoneInput.value.replace(/-/g, ""); // Remove dashes from the phone number
+
+      if (phoneNumber.length === 10) {
+        phoneInput.value = phoneNumber; // Update the input value without dashes
+        document.getElementById('phoneForm').submit(); // Submit the form
+      }
+    }
+
+</script>
 
 </body>
 
