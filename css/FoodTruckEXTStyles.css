@@ -156,3 +156,108 @@ marquee {
         animation: bounce 0.5s ease-in-out;
         animation-fill-mode: both;
     }
+
+    img {align-items: center; display:block; margin: 0 auto; }
+
+img {
+      position: relative;
+      overflow: hidden;
+	transition: box-shadow 0.3s ease;
+}
+
+img:hover {box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1); 
+    }
+
+    li {
+      opacity: 0;
+      animation: fade-in 0.5s ease forwards;
+    }
+    
+    li:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    
+    li:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    li:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+   form { box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 20px; 
+      background-color: lavender;
+      text-align: center;}
+
+    input { background-color: #f2e9f8;}
+
+    form input[type="submit"] {
+      background-color: teal;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+      0% {
+          transform: scale(1);
+      }
+      50% {
+          transform: scale(1.2);
+      }
+      100% {
+          transform: scale(1);
+      }
+  }
+
+
+    nav ul li {
+      position: relative;
+      display: inline-block;
+      margin: 0 10px;
+    }
+    
+    nav ul li a:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-out;
+    }
+    
+    nav ul li:hover a:before {
+      transform: scaleX(1);
+    }
+    
+    nav ul li:hover a {
+      color: #fff;
+    }
+
+    footer a:visited { color: red;}
+
+    footer a:link { color: teal;}
+
+    form input { text-align: center; font-family: 'Alkatra'; color: teal;}
